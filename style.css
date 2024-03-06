@@ -1,0 +1,152 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #1f1c26;
+	font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+	max-width: 1170px;
+	margin: 0 auto;
+
+	min-height: 100%;
+	position: relative;
+	box-sizing: border-box; /* Додайте це, щоб забезпечити правильне обчислення висоти */
+	padding-bottom: 50px; /* Висота футера */
+}
+
+/* ///////////////////////// */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #f2f2f2;
+	margin-top: 64px;
+}
+
+.header__logo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* padding: 30px 19px; */
+	padding: 3% 3%;
+
+	border: 1px solid #f2f2f2;
+}
+
+.header__logoWortOut {
+	display: flex;
+	z-index: 1;
+	height: 37.5px;
+}
+
+.header__logoWort {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.header__logoOut {
+	font-size: 36px;
+	font-weight: bold;
+	color: #f24b88;
+}
+.header__logoBellive {
+	letter-spacing: 3px;
+	font-size: 14px;
+	font-weight: 300;
+	z-index: 2;
+}
+
+.header__menu {
+	display: flex;
+	font-size: 14px;
+}
+
+.header__menuItem:not(:last-child) {
+	margin-right: 58px;
+}
+
+.header__menuItem:hover:not(:last-child) {
+	text-decoration: none;
+	border-bottom: 5px solid #59253e;
+}
+
+.menuItem_button {
+	width: 57px;
+	height: 21px;
+	padding: 0;
+}
+
+.header__menuItem_button_login {
+	border: none;
+	background-color: #f24b88;
+	color: #f2f2f2;
+}
+
+.header__menuItem_button_signIn {
+	border: 1px solid #f2f2f2;
+	background-color: #253439;
+	color: #f2f2f2;
+}
+
+@media (min-width: 769px) {
+	.header__hamburger {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	header {
+		margin-top: 0px;
+	}
+
+	.header__logo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		/* padding: 0px 0px; */
+
+		border: 1px solid #f2f2f2;
+	}
+
+	.header__logoWortOut {
+		height: 30px;
+	}
+
+	.header__logoWort {
+		font-size: 24px;
+	}
+
+	.header__logoOut {
+		font-size: 24px;
+	}
+	.header__logoBellive {
+		letter-spacing: 3px;
+		font-size: 8px;
+	}
+
+	.header__menu {
+		display: none;
+	}
+
+	.wrapper {
+		margin: 11px;
+	}
+}
+
+/* /////////////// */
+main {
+	background-color: bisque;
+}
+/* /////////////// */
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px; /* Висота футера */
+	background-color: yellowgreen;
+}
