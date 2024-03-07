@@ -13,8 +13,8 @@ body {
 
 	min-height: 100%;
 	position: relative;
-	box-sizing: border-box; /* Додайте це, щоб забезпечити правильне обчислення висоти */
-	padding-bottom: 50px; /* Висота футера */
+	box-sizing: border-box;
+	padding-bottom: 50px;
 }
 
 /* ///////////////////////// */
@@ -140,7 +140,7 @@ header {
 
 /* /////////////// */
 main {
-	background-color: bisque;
+	/* background-color: violet; */
 }
 /* /////////////// */
 footer {
@@ -149,4 +149,169 @@ footer {
 	width: 100%;
 	height: 50px; /* Висота футера */
 	background-color: yellowgreen;
+}
+
+/* ///main */
+
+main {
+	margin-top: 60px;
+}
+
+.workOutPlane {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 25px;
+}
+
+.workOutPlane_inform {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	/* background-color: violet; */
+}
+
+.workOutPlane_title {
+	color: #ffff;
+}
+
+.workOutPlane_titleBig {
+	font-size: 64px;
+	font-weight: bold;
+	height: 70px;
+	letter-spacing: 20px;
+}
+
+.workOutPlane_titleMiddle {
+	font-size: 29px;
+	letter-spacing: 10px;
+}
+
+.workOutPlane_text {
+	font-size: 14px;
+	color: #706e74;
+	width: 392px;
+}
+
+.workOutPlane_button {
+	display: flex;
+
+	justify-content: space-between;
+}
+
+.buttonBig {
+	background-color: #f24b88;
+	border: none;
+	max-width: 100%;
+	height: 70px;
+	color: #ffff;
+	font-weight: 600;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+.workOutPlane_photo {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	margin-right: 26px;
+	margin-left: 70px;
+}
+
+@media (max-width: 1016px) and (min-width: 769px) {
+	.workOutPlane {
+		justify-content: space-evenly;
+	}
+	.workOutPlane_inform {
+	}
+	.workOutPlane_titleBig {
+		font-size: 20px;
+		height: 25px;
+	}
+	.workOutPlane_titleMiddle {
+		font-size: 10px;
+	}
+	.workOutPlane_text {
+		font-size: 14px;
+		width: 150px;
+	}
+	.buttonBig {
+		max-width: 40%;
+		height: 35px;
+		font-size: 75%;
+	}
+	.workOutPlane_photo {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+}
+
+.workOutPlane_photo img {
+	border-radius: 20px;
+	max-width: 100%;
+	height: auto;
+}
+
+.workOutPlane_announcements {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	color: #ffff;
+	width: 25%;
+}
+
+.workOutPlane_announcement {
+	background-color: #332f3c;
+	border-radius: 20px;
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 5% 5%;
+}
+
+.announcement_title {
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.announcement_text {
+	font-size: 14px;
+	color: #706e74;
+}
+
+.announcement_button {
+	display: flex;
+	align-items: center;
+}
+
+.announcement_button button {
+	background-color: #f24b88;
+	border: none;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	margin-right: 13px;
+}
+
+.announcement_buttonText {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+@media (max-width: 1016px) and (min-width: 769px) {
+	.announcement_title {
+		font-weight: 600;
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.workOutPlane_announcements {
+		display: none;
+	}
+
+	.buttonBigSec {
+		display: none;
+	}
 }
