@@ -401,7 +401,7 @@ main {
 }
 
 .block_titleLine {
-	width: 25%;
+	width: 61px;
 	height: 5px;
 	background-color: #59253e;
 }
@@ -523,5 +523,135 @@ main {
 	.buttonSmall {
 		width: 89.48px;
 		height: 36px;
+	}
+}
+
+/* ourTeam_block */
+
+.ourTeam {
+	margin-top: 50px;
+}
+
+.latestTraining_header {
+	margin-bottom: 94px;
+}
+
+.block_titleText {
+	color: #ffff;
+}
+
+.ourTeam_blocks {
+	display: flex;
+}
+
+.ourTeam_block {
+	width: 100%;
+	height: auto;
+	background-color: #f2f2f2;
+}
+
+.ourTeam_block:not(:last-child) {
+	margin-right: 40px;
+}
+
+.ourTeam_img {
+	height: auto;
+	width: 100%;
+}
+.ourTeam_img img {
+	width: 100%;
+	height: auto;
+}
+
+.ourTeam_inform {
+	padding: 21px 12px 12px 12px;
+}
+
+.ourTeam_person {
+	font-style: italic;
+}
+
+.ourTeam_personName {
+	font-weight: bold; /* Жирний */
+	font-size: 18px;
+	height: 20px;
+}
+
+.ourTeam_personPosition {
+	font-weight: 600;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.ourTeam_text {
+	text-align: center;
+	color: #706e74;
+	font-size: 12px;
+	margin-bottom: 54px;
+}
+
+.ourTeam_button {
+	display: flex;
+	justify-content: end;
+}
+
+@media (max-width: 768px) {
+	.latestTraining_header {
+		margin-bottom: 27px;
+	}
+	.ourTeam_blocks {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(40%, 1fr)); /* Розміщуємо по два елементи у рядку */
+		grid-column-gap: 9px;
+		grid-row-gap: 38px;
+	}
+
+	.ourTeam_block {
+		width: 100%;
+		box-sizing: border-box;
+		background-color: #1f1c26;
+		color: #e5e3e3;
+		font-size: 18px;
+	}
+
+	.ourTeam_img {
+		width: 100%;
+	}
+
+	.ourTeam_img img {
+		border-radius: 20px;
+		aspect-ratio: 1 / 1;
+		overflow: hidden;
+	}
+
+	.ourTeam_person {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+	}
+
+	.ourTeam_inform {
+		padding: 0;
+	}
+
+	.ourTeam_text {
+		display: none;
+	}
+	.ourTeam_button {
+		display: none;
+	}
+	.ourTeam_personPosition {
+		display: none;
+	}
+	.ourTeam_block_button_adaptiv {
+		display: flex;
+		justify-content: center;
+		margin-top: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	.ourTeam_block_button_adaptiv {
+		display: none;
 	}
 }
