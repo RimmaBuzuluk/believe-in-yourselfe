@@ -10,7 +10,6 @@ body {
 .wrapper {
 	max-width: 1170px;
 	margin: 0 auto;
-
 	min-height: 100%;
 	position: relative;
 	box-sizing: border-box;
@@ -147,7 +146,7 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 50px; /* Висота футера */
+	height: 50px;
 	background-color: yellowgreen;
 }
 
@@ -218,11 +217,9 @@ main {
 	margin-left: 70px;
 }
 
-@media (max-width: 1016px) and (min-width: 769px) {
+@media (max-width: 1016px) and (min-width: 768px) {
 	.workOutPlane {
 		justify-content: space-evenly;
-	}
-	.workOutPlane_inform {
 	}
 	.workOutPlane_titleBig {
 		font-size: 20px;
@@ -299,19 +296,232 @@ main {
 	font-size: 18px;
 }
 
-@media (max-width: 1016px) and (min-width: 769px) {
+@media (max-width: 1016px) and (min-width: 767px) {
 	.announcement_title {
 		font-weight: 600;
 		font-size: 15px;
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+	.workOutPlane {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.workOutPlane_inform {
+		order: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 50px;
+	}
+	.workOutPlane_title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.workOutPlane_titleBig {
+		font-size: 26px;
+		height: 30px;
+		letter-spacing: 10px;
+	}
+	.workOutPlane_titleMiddle {
+		font-size: 12px;
+		letter-spacing: 5px;
+	}
+	.workOutPlane_text {
+		text-align: center;
+		font-size: 12px;
+		margin-top: 16px;
+		width: 100%;
+	}
+
+	.workOutPlane_photo {
+		order: 1;
+		display: flex;
+		align-items: center;
+		margin: 0;
+	}
+
+	.buttonBig {
+		width: 108px;
+		height: 39.79px;
+		font-size: 13px;
+		margin-top: 56px;
+	}
+	.buttonBigSec {
+		display: none;
+	}
 	.workOutPlane_announcements {
 		display: none;
 	}
 
-	.buttonBigSec {
+	.workOutPlane_photo {
+		width: 100%;
+		height: auto;
+	}
+
+	.workOutPlane_photo {
+		width: 100%;
+		height: auto;
+	}
+
+	.workOutPlane_photo img {
+		width: 100%;
+		height: auto;
+	}
+
+	.workOutPlane_photo img:first-child {
 		display: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.workOutPlane_photo img:last-child {
+		display: none;
+	}
+}
+
+/* ///////////latestTraining */
+
+.latestTraining {
+	color: #ffff;
+	margin-top: 148px;
+}
+
+.latestTraining_header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.block_title {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.block_titleLine {
+	width: 25%;
+	height: 5px;
+	background-color: #59253e;
+}
+
+.button__more {
+	font-size: 14px;
+}
+
+.latestTraining_blocks {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.latestTraining_block_item:not(:last-child) {
+	margin-right: 25px;
+}
+
+.latestTraining_block_photo img {
+	width: 100%;
+	height: auto;
+}
+
+.latestTraining_block_title {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 15px;
+}
+.latestTraining_block_text {
+	font-size: 14px;
+	color: #706e74;
+	margin-top: 15px;
+}
+
+.latestTraining_block_button {
+	margin-top: 15px;
+}
+
+.buttonSmall {
+	background-color: #f24b88;
+	font-weight: 600;
+	border: none;
+	color: #ffff;
+	border-radius: 5px;
+	width: 98px;
+	height: 35.38px;
+}
+
+@media (min-width: 768px) {
+	.latestTraining_block_title_adaptive {
+		display: none;
+	}
+	.latestTraining_block_button_adaptiv {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.latestTraining_blocks {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.latestTraining_header {
+		display: flex;
+		justify-content: center;
+	}
+	.latestTraining_block_item {
+		width: 100%;
+		height: auto;
+		margin-bottom: 42px;
+	}
+
+	.latestTraining_block_item {
+	}
+
+	.block_titleLine {
+		width: 100%;
+	}
+
+	.latestTraining_block_photo {
+		position: relative;
+	}
+	.latestTraining_block_photo img {
+		border-radius: 10px;
+	}
+
+	.latestTraining_block_title_adaptive {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 12px;
+		margin-left: 6px;
+	}
+
+	.latestTraining_block_text {
+		display: none;
+	}
+
+	.latestTraining_block_title {
+		display: none;
+	}
+
+	.latestTraining_block_button {
+		display: none;
+	}
+
+	.button__more {
+		display: none;
+	}
+
+	.latestTraining_block_button_adaptiv {
+		display: flex;
+		justify-content: center;
+	}
+
+	.buttonSmall {
+		width: 89.48px;
+		height: 36px;
 	}
 }
