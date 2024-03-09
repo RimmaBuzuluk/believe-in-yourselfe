@@ -19,9 +19,9 @@
 					<div class="header__logoBellive">BELIVE IN YOURSELFE</div>
 				</div>
 				<div id="header_menu" class="header__menu">
-					<div class="header__menuItem">Latest training</div>
-					<div class="header__menuItem">Our team</div>
-					<div class="header__menuItem">Discover</div>
+					<div class="header__menuItem" data-section="latestTraining">Latest training</div>
+					<div class="header__menuItem" data-section="ourTeam">Our team</div>
+					<div class="header__menuItem" data-section="potencial">Discover</div>
 					<div class="header__menuItem">
 						<button class="header__menuItem_button_login menuItem_button">LOGIN</button>
 						<button class="header__menuItem_button_signIn menuItem_button">SIGN IN</button>
@@ -215,10 +215,12 @@
 					</div>
 					<div class="footer_subscribe footer_block">
 						<div class="footer_menuTitle_subscribe">SUBSCRIBE TO OUR NEWSLETTER</div>
-						<div class="footer_input">
-							<input type="email" placeholder="Type your email here" />
-						</div>
-						<button class="buttonSmall">SUBSCRIBE</button>
+						<form id="subscribeForm">
+							<div class="footer_input">
+								<input id="emailInput" type="email" placeholder="Type your email here" required />
+							</div>
+							<button type="submit" class="buttonSmall">SUBSCRIBE</button>
+						</form>
 					</div>
 				</div>
 				<div class="footer_lastText">
@@ -239,11 +241,8 @@
 						document.querySelector('#main-content').classList.toggle('blur'); // Додаємо або видаляємо клас розмиття для main
 						document.querySelector('#footer-content').classList.toggle('blur'); // Додаємо або видаляємо клас розмиття для footer
 						const humburger = document.querySelector('.header__hamburger');
-						// Перевіряємо, чи елемент видимий і змінюємо відображення відповідно
 						humburger.style.display = 'none';
 						headerMenu.style.display = 'block';
-						// headerMenu.style.display = 'flex';
-						// headerMenu.style. = 'column';
 					});
 				}
 				if (window.innerWidth < 768) {
@@ -256,16 +255,72 @@
 					});
 				}
 				if (window.innerWidth < 768) {
-					// Додаємо обробник подій для #footer-content
 					document.querySelector('#footer-content').addEventListener('click', function () {
 						var headerMenu = document.querySelector('.header__menu');
-						headerMenu.classList.remove('show-menu'); // Приховуємо меню
-						document.querySelector('#main-content').classList.remove('blur'); // Прибираємо розмиття для main
-						document.querySelector('#footer-content').classList.remove('blur'); // Прибираємо розмиття для footer
-						document.querySelector('.header__hamburger').style.display = 'block'; // Показуємо гамбургер
+						headerMenu.classList.remove('show-menu');
+						document.querySelector('#main-content').classList.remove('blur');
+						document.querySelector('#footer-content').classList.remove('blur');
+						document.querySelector('.header__hamburger').style.display = 'block';
 					});
-					// }
 				}
+
+				document.getElementById('subscribeForm').addEventListener('submit', function (event) {
+					event.preventDefault();
+
+					var email = document.getElementById('emailInput').value;
+
+					fetch('/subscribe', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({ email: email }),
+					})
+						.then(response => {
+							if (response.ok) {
+								alert('Subscription successful!');
+							} else {
+								throw new Error('Failed to subscribe');
+							}
+						})
+						.catch(error => {
+							console.error('Error subscribing:', error);
+							alert('Failed to subscribe. Please try again later.');
+						});
+				});
+
+				// JavaScript
+				document.addEventListener('DOMContentLoaded', function () {
+					function scrollToSection(sectionId) {
+						var section = document.getElementById(sectionId);
+						console.log(section);
+						if (section) {
+							section.scrollIntoView({ behavior: 'smooth' });
+						}
+					}
+
+					// Додавання обробників подій на елементи меню
+					document.querySelectorAll('.header__menuItem').forEach(item => {
+						item.addEventListener('click', function () {
+							var sectionId = item.getAttribute('data-section');
+							scrollToSection(sectionId);
+						});
+					});
+
+					// Додавання обробника подій на елемент логотипу
+					document.querySelector('.header__logo').addEventListener('click', function () {
+						console.log('logo');
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					});
+
+					// Додавання обробника подій на елементи зовнішніх посилань
+					document.querySelectorAll('.footer_networks .networks_item').forEach(item => {
+						item.addEventListener('click', function () {
+							var link = item.querySelector('img').getAttribute('src');
+							window.open(link, '_blank');
+						});
+					});
+				});
 			</script>
 		</div>
 	</body>
