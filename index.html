@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>WorkOut</title>
 		<link rel="stylesheet" href="./style.css" />
+		<link href="./buttonStyle.css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
 	</head>
 	<body>
@@ -17,7 +18,7 @@
 					</div>
 					<div class="header__logoBellive">BELIVE IN YOURSELFE</div>
 				</div>
-				<div class="header__menu">
+				<div id="header_menu" class="header__menu">
 					<div class="header__menuItem">Latest training</div>
 					<div class="header__menuItem">Our team</div>
 					<div class="header__menuItem">Discover</div>
@@ -26,9 +27,9 @@
 						<button class="header__menuItem_button_signIn menuItem_button">SIGN IN</button>
 					</div>
 				</div>
-				<div class="header__hamburger"><img src="./img/HAMBURGUER MENU.png" /></div>
+				<button class="header__hamburger"><img src="./img/HAMBURGUER MENU.png" /></button>
 			</header>
-			<main>
+			<main id="main-content">
 				<div class="workOutPlane">
 					<div class="workOutPlane_inform">
 						<div class="workOutPlane_title">
@@ -175,7 +176,7 @@
 					</div>
 				</div>
 			</main>
-			<footer>
+			<footer id="footer-content">
 				<div class="footer_inform">
 					<div class="footer_logo footer_block">
 						<div class="header__logo">
@@ -229,6 +230,43 @@
 					<div class="termsConditions">Terms & Conditions</div>
 				</div>
 			</footer>
+
+			<script>
+				if (window.innerWidth < 768) {
+					document.querySelector('.header__hamburger').addEventListener('click', function () {
+						var headerMenu = document.querySelector('.header__menu');
+						headerMenu.classList.toggle('show-menu'); // Додаємо або видаляємо клас, який показує або ховає меню
+						document.querySelector('#main-content').classList.toggle('blur'); // Додаємо або видаляємо клас розмиття для main
+						document.querySelector('#footer-content').classList.toggle('blur'); // Додаємо або видаляємо клас розмиття для footer
+						const humburger = document.querySelector('.header__hamburger');
+						// Перевіряємо, чи елемент видимий і змінюємо відображення відповідно
+						humburger.style.display = 'none';
+						headerMenu.style.display = 'block';
+						// headerMenu.style.display = 'flex';
+						// headerMenu.style. = 'column';
+					});
+				}
+				if (window.innerWidth < 768) {
+					document.querySelector('#main-content').addEventListener('click', function () {
+						var headerMenu = document.querySelector('.header__menu');
+						headerMenu.style.display = 'none';
+						document.querySelector('#main-content').classList.remove('blur'); // Прибираємо розмиття для main
+						document.querySelector('#footer-content').classList.remove('blur'); // Прибираємо розмиття для footer
+						document.querySelector('.header__hamburger').style.display = 'block'; // Показуємо гамбургер
+					});
+				}
+				if (window.innerWidth < 768) {
+					// Додаємо обробник подій для #footer-content
+					document.querySelector('#footer-content').addEventListener('click', function () {
+						var headerMenu = document.querySelector('.header__menu');
+						headerMenu.classList.remove('show-menu'); // Приховуємо меню
+						document.querySelector('#main-content').classList.remove('blur'); // Прибираємо розмиття для main
+						document.querySelector('#footer-content').classList.remove('blur'); // Прибираємо розмиття для footer
+						document.querySelector('.header__hamburger').style.display = 'block'; // Показуємо гамбургер
+					});
+					// }
+				}
+			</script>
 		</div>
 	</body>
 </html>

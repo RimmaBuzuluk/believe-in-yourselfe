@@ -90,6 +90,28 @@ header {
 	color: #f2f2f2;
 }
 
+.header__hamburger {
+	background-color: #1f1c26;
+	border: none;
+}
+
+.header__hamburger:active {
+	transform: translateY(4px);
+}
+
+.blur {
+	filter: blur(5px); /* Розмиття ефект */
+	transition: filter 0.5s ease; /* Плавний перехід */
+}
+
+.show-menu {
+	display: block;
+	background-color: white;
+}
+
+.hiden-menu {
+	display: none;
+}
 @media (min-width: 769px) {
 	.header__hamburger {
 		display: none;
@@ -128,7 +150,44 @@ header {
 	}
 
 	.header__menu {
+		display: flex;
+		flex-direction: column;
+		/* justify-content: space-between;
+		align-items: center; */
+
+		align-items: center;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		width: auto;
+
+		z-index: 100;
+		border-radius: 20px 0px 0px 20px;
+		background-color: #59253e;
+		padding: 34px 15px 20px 15px;
+	}
+
+	.header__menu {
 		display: none;
+	}
+
+	.header__menuItem {
+		color: #f2f2f2;
+		line-height: 18px;
+		font-size: 12px;
+		font-weight: 400;
+		text-align: center;
+		margin-right: 0;
+		margin-bottom: 14px;
+	}
+
+	.header__menuItem:not(:last-child) {
+		margin-right: 0px;
+	}
+	.header__menuItem:last-child {
+		margin-top: ;
 	}
 
 	.wrapper {
@@ -198,6 +257,16 @@ main {
 	font-weight: 600;
 	border-radius: 10px;
 	font-size: 20px;
+}
+
+.buttonBig:hover {
+	background-color: #b43966;
+}
+
+.buttonBig:active {
+	background-color: #b43966;
+	box-shadow: 10px 5px #7c2846;
+	transform: translateY(4px);
 }
 
 .workOutPlane_photo {
@@ -439,6 +508,16 @@ main {
 	border-radius: 5px;
 	width: 98px;
 	height: 35.38px;
+}
+
+.buttonSmall:hover {
+	background-color: #b43966;
+}
+
+.buttonSmall:active {
+	background-color: #b43966;
+	box-shadow: 5px 3px #7c2846;
+	transform: translateY(2px);
 }
 
 @media (min-width: 768px) {
@@ -685,8 +764,18 @@ main {
 }
 
 .buttonBig_black {
-	background-color: #1f1c26;
+	background-color: #0c0a11;
 	margin-left: 30px;
+}
+
+.buttonBig_black:hover {
+	background-color: #797582;
+}
+
+.buttonBig_black:active {
+	background-color: #797582;
+	box-shadow: 10px 5px #58516a;
+	transform: translateY(4px);
 }
 
 @media (max-width: 768px) {
