@@ -11,7 +11,7 @@
 	<body>
 		<div class="wrapper">
 			<header>
-				<div class="header__logo">
+				<div class="header__logo" onclick="scrollToTop()">
 					<div class="header__logoWortOut">
 						<div class="header__logoWort">WORK</div>
 						<div class="header__logoOut">OUT</div>
@@ -19,9 +19,9 @@
 					<div class="header__logoBellive">BELIVE IN YOURSELFE</div>
 				</div>
 				<div id="header_menu" class="header__menu">
-					<div class="header__menuItem" data-section="latestTraining">Latest training</div>
-					<div class="header__menuItem" data-section="ourTeam">Our team</div>
-					<div class="header__menuItem" data-section="potencial">Discover</div>
+					<div class="header__menuItem" onclick="scrollToElement('latestTraining')">Latest training</div>
+					<div class="header__menuItem" onclick="scrollToElement('ourTeam')">Our team</div>
+					<div class="header__menuItem" onclick="scrollToElement('potencial')">Discover</div>
 					<div class="header__menuItem">
 						<button class="header__menuItem_button_login menuItem_button">LOGIN</button>
 						<button class="header__menuItem_button_signIn menuItem_button">SIGN IN</button>
@@ -65,7 +65,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="latestTraining">
+				<div id="latestTraining" class="latestTraining">
 					<div class="latestTraining_header">
 						<div class="block_title">
 							<div class="block_titleText">LATEST TRAINING</div>
@@ -104,7 +104,7 @@
 					</div>
 					<div class="latestTraining_block_button_adaptiv"><button class="buttonSmall">SEE MORE</button></div>
 				</div>
-				<div class="ourTeam">
+				<div id="ourTeam" class="ourTeam">
 					<div class="latestTraining_header">
 						<div class="block_title">
 							<div class="block_titleText">OUR TEAM</div>
@@ -167,7 +167,7 @@
 					</div>
 					<div class="ourTeam_block_button_adaptiv"><button class="buttonSmall">SEE MORE</button></div>
 				</div>
-				<div class="potencial">
+				<div id="potencial" class="potencial">
 					<div class="potencial_title">DISCOVER YOUR POTENCIAL</div>
 					<div class="potencial_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum. text of the printing and typesetting</div>
 					<div class="potencial_buttons">
@@ -179,7 +179,7 @@
 			<footer id="footer-content">
 				<div class="footer_inform">
 					<div class="footer_logo footer_block">
-						<div class="header__logo">
+						<div class="header__logo" onclick="scrollToTop()">
 							<div class="header__logoWortOut">
 								<div class="header__logoWort">WORK</div>
 								<div class="header__logoOut">OUT</div>
@@ -289,38 +289,24 @@
 						});
 				});
 
-				// JavaScript
-				document.addEventListener('DOMContentLoaded', function () {
-					function scrollToSection(sectionId) {
-						var section = document.getElementById(sectionId);
-						console.log(section);
-						if (section) {
-							section.scrollIntoView({ behavior: 'smooth' });
-						}
+				// scrole to element
+
+				function scrollToElement(elemetId) {
+					console.log(elemetId);
+					var element = document.getElementById(elemetId);
+					console.log(element);
+					if (element) {
+						element.scrollIntoView({ behavior: 'smooth' });
 					}
+				}
 
-					// Додавання обробників подій на елементи меню
-					document.querySelectorAll('.header__menuItem').forEach(item => {
-						item.addEventListener('click', function () {
-							var sectionId = item.getAttribute('data-section');
-							scrollToSection(sectionId);
-						});
+				///scrolle to top
+				function scrollToTop() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth',
 					});
-
-					// Додавання обробника подій на елемент логотипу
-					document.querySelector('.header__logo').addEventListener('click', function () {
-						console.log('logo');
-						window.scrollTo({ top: 0, behavior: 'smooth' });
-					});
-
-					// Додавання обробника подій на елементи зовнішніх посилань
-					document.querySelectorAll('.footer_networks .networks_item').forEach(item => {
-						item.addEventListener('click', function () {
-							var link = item.querySelector('img').getAttribute('src');
-							window.open(link, '_blank');
-						});
-					});
-				});
+				}
 			</script>
 		</div>
 	</body>
