@@ -13,7 +13,7 @@ body {
 	min-height: 100%;
 	position: relative;
 	box-sizing: border-box;
-	padding-bottom: 50px;
+	padding-bottom: 25px;
 }
 
 /* ///////////////////////// */
@@ -994,7 +994,7 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	font-size: 12px;
-	margin: 28px 0;
+	margin: 28px 0 0 0;
 }
 
 .footer_copyringText {
